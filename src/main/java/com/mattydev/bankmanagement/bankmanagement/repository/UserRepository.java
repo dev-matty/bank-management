@@ -4,7 +4,7 @@ import com.mattydev.bankmanagement.bankmanagement.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
+import java.util.Optional;
 
 /**
  * @author matty - 26/03/2023
@@ -13,5 +13,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query(value = "SELECT * FROM USERS where email = ?1",nativeQuery = true)
-    List<User> findByEmail(String emailValue);
+    Optional<User> findByEmail(String emailValue);
+
 }
