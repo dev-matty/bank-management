@@ -1,5 +1,6 @@
 package com.mattydev.bankmanagement.bankmanagement.controllers;
 
+import com.mattydev.bankmanagement.bankmanagement.exception.UserException;
 import com.mattydev.bankmanagement.bankmanagement.exception.UserMailPresentException;
 import com.mattydev.bankmanagement.bankmanagement.exception.UserNotFoundException;
 import com.mattydev.bankmanagement.bankmanagement.models.User;
@@ -46,11 +47,22 @@ public class UserController {
     @PostMapping
     public ResponseEntity<User> create(@RequestBody User user) throws Exception {
         try {
-            return new ResponseEntity<User>(userService.createUser(user),HttpStatus.OK);
+            return new ResponseEntity<User>(userService.createUser(user),HttpStatus.CREATED     );
         } catch (UserMailPresentException exception){
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,exception.getLocalizedMessage());
         }
     }
+
+    @PutMapping
+    public ResponseEntity<User> update(@RequestBody User user) throws Exception {
+        try {
+            return new ResponseEntity<User>(userService.updateUser(user),HttpStatus.OK);
+        } catch(UserException exception){
+            throw  new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,exception.getLocalizedMessage());
+        }
+
+    }
+
 
 
 }

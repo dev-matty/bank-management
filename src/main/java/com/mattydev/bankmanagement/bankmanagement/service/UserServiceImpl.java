@@ -38,14 +38,35 @@ public class UserServiceImpl implements UserService{
         if(user.isPresent())
             return user.get();
         else
-            throw new UserNotFoundException("User not found with this ID : "+email);
+            throw new UserNotFoundException("User not found with this email : "+email);
+    }
+
+    public boolean isEmailIsInDb(String email) {
+        Optional<User> user = userRepository.findByEmail(email);
+        return user.isPresent();
     }
 
     @Override
     public User createUser(User user) {
-        if(findUserByEmail(user.getEmail()) != null){
+        if(isEmailIsInDb(user.getEmail())){
             throw new UserMailPresentException("User with this mail already in DB : " +user.getEmail());
         }
         return userRepository.save(user);
+    }
+
+    @Override
+    public User updateUser(User user){
+        if(findUserById(user.getId()) != null){
+            User userFind = findUserById(user.getId());
+            //If email is modify and new email is in db throw error
+            if(!userFind.getEmail().equals(user.getEmail())
+                    && isEmailIsInDb(user.getEmail())){
+                throw new UserMailPresentException("Another user with this mail is already in DB : " +user.getEmail());
+            } else {
+                return userRepository.save(user);
+            }
+        } else {
+            throw new UserNotFoundException("User not found with this ID : "+user.getId());
+        }
     }
 }
