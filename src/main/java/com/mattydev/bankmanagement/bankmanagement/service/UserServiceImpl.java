@@ -69,4 +69,9 @@ public class UserServiceImpl implements UserService{
             throw new UserNotFoundException("User not found with this ID : "+user.getId());
         }
     }
+
+  /*  public boolean deleteUser(User user){
+        return userRepository.delete(user);
+    }*/
+
 }
