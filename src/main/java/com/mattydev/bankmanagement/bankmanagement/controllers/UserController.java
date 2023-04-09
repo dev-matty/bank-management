@@ -24,7 +24,7 @@ public class UserController {
     @Autowired
     public void setUserService(UserService userService){this.userService = userService;}
     //GET USER BY ID
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> getUserById (@PathVariable Long id){
         try {
             return new ResponseEntity<User>(userService.findUserById(id),HttpStatus.OK);
@@ -60,9 +60,14 @@ public class UserController {
         } catch(UserException exception){
             throw  new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,exception.getLocalizedMessage());
         }
-
     }
 
-
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> delete (@PathVariable Long id){
+        try {
+            return new ResponseEntity<Boolean>(userService.deleteUser(id),HttpStatus.OK);
+        } catch (UserNotFoundException exception){
+            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,exception.getLocalizedMessage());
+        }
+    }
 }

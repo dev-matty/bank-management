@@ -70,8 +70,14 @@ public class UserServiceImpl implements UserService{
         }
     }
 
-  /*  public boolean deleteUser(User user){
-        return userRepository.delete(user);
-    }*/
+    @Override
+    public boolean deleteUser(Long id){
+        if(userRepository.findById(id).isPresent()){
+            userRepository.deleteById(id);
+            return userRepository.findById(id).isPresent();
+        } else {
+            throw new UserNotFoundException("User cannot be delete is not found with ID : "+id);
+        }
+    }
 
 }
