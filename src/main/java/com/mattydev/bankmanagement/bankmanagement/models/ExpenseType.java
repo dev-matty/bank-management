@@ -2,6 +2,7 @@ package com.mattydev.bankmanagement.bankmanagement.models;
 
 import jakarta.persistence.*;
 
+
 /**
  * @author matty - 25/03/2023
  * @project bank-management
@@ -11,7 +12,7 @@ import jakarta.persistence.*;
 public class ExpenseType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
 
@@ -23,11 +24,11 @@ public class ExpenseType {
     }
 
     // getters and setters for all fields
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

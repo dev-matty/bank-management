@@ -32,15 +32,14 @@ public class FixedExpense {
     @Column(name = "end_date")
     private LocalDate endDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "expense_type_id", nullable = false)
-    private ExpenseType expenseType;
+    @Column(name = "expense_type_id", nullable = false)
+    private Long expenseType;
 
     // Constructors
     public FixedExpense() {
     }
 
-    public FixedExpense(String name, String description, BigDecimal amount, LocalDate startDate, LocalDate endDate, ExpenseType expenseType) {
+    public FixedExpense(String name, String description, BigDecimal amount, LocalDate startDate, LocalDate endDate, Long expenseType) {
         this.name = name;
         this.description = description;
         this.amount = amount;
@@ -98,11 +97,11 @@ public class FixedExpense {
         this.endDate = endDate;
     }
 
-    public ExpenseType getExpenseType() {
+    public Long getExpenseType() {
         return expenseType;
     }
 
-    public void setExpenseType(ExpenseType expenseType) {
+    public void setExpenseType(Long expenseType) {
         this.expenseType = expenseType;
     }
 }
