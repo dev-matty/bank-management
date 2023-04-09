@@ -2,7 +2,9 @@ package com.mattydev.bankmanagement.bankmanagement.service;
 
 import com.mattydev.bankmanagement.bankmanagement.models.Expense;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author matty - 08/04/2023
@@ -10,9 +12,11 @@ import java.util.List;
  */
 public interface ExpenseService {
     List<Expense> listExpense();
-    List<Expense> findExpensesByUser(Long idUser);
     Expense findExpenseById(Long idExpense);
     Expense createExpense(Expense expense);
     Expense updateExpense(Expense expense);
     boolean deleteExpense(Long idExpense);
+    List<Expense> findExpensesByUser(Long id);
+    List<Expense> findExpensesByUserAndDate(Long id, LocalDate startDate, Optional<LocalDate> endDate);
+
 }

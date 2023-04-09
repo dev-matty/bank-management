@@ -9,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-
 /**
  * @author matty - 08/04/2023
  * @project bank-management
@@ -23,20 +21,13 @@ public class ExpenseController {
     @Autowired
     private void setExpenseService(ExpenseService expenseService) { this.expenseService = expenseService;}
 
+
     @GetMapping("/{id}")
     public ResponseEntity<Expense> getExpenseById(@PathVariable Long id){
         try {
             return  new ResponseEntity<Expense>(expenseService.findExpenseById(id), HttpStatus.OK);
         } catch (ExpenseException exception){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,exception.getLocalizedMessage());
-        }
-    }
-    @GetMapping("/user/{id}")
-    public ResponseEntity<List<Expense>> getExpenseByUserId(@PathVariable Long id){
-        try {
-            return new ResponseEntity<List<Expense>>(expenseService.findExpensesByUser(id),HttpStatus.OK);
-        } catch (ExpenseException exception){
-            throw new ResponseStatusException(HttpStatus.NO_CONTENT,exception.getLocalizedMessage());
         }
     }
     @PostMapping

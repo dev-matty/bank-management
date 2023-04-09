@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,12 +29,6 @@ public class ExpenseServiceImpl implements ExpenseService {
     @Override
     public List<Expense> listExpense() {
         return expenseRepository.findAll();
-    }
-
-
-    @Override
-    public List<Expense> findExpensesByUser(Long idUser) {
-        return expenseRepository.findExpensesWithUser(idUser);
     }
 
     @Override
@@ -78,4 +73,18 @@ public class ExpenseServiceImpl implements ExpenseService {
             throw new ExpenseNotFoundException("Expense not found with this ID : "+idExpense);
         }
     }
+    @Override
+    public List<Expense> findExpensesByUser(Long id) {
+        return expenseRepository.findExpensesWithUser(id);
+    }
+
+    @Override
+    public List<Expense> findExpensesByUserAndDate(Long id, LocalDate startDate, Optional<LocalDate> endDate) {
+        if(endDate.isEmpty()){
+            return expenseRepository.findExpensesByUserAndDate(id,startDate);
+        } else {
+            return expenseRepository.findExpensesByUserAndDate(id,startDate,endDate.get());
+        }
+    }
+
 }

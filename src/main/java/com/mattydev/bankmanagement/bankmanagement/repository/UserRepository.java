@@ -1,9 +1,11 @@
 package com.mattydev.bankmanagement.bankmanagement.repository;
 
+import com.mattydev.bankmanagement.bankmanagement.models.Expense;
 import com.mattydev.bankmanagement.bankmanagement.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -15,4 +17,6 @@ public interface UserRepository extends JpaRepository<User,Long> {
     @Query(value = "SELECT * FROM USERS where email = ?1",nativeQuery = true)
     Optional<User> findByEmail(String emailValue);
 
+    @Query(value = "SELECT * FROM EXPENSES where user_id = ?1",nativeQuery = true)
+    List<Expense> findExpensesByUser(Long user_id);
 }
