@@ -58,12 +58,14 @@ public class ExpenseController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> deleteExpense(@PathVariable Long id){
+    public ResponseEntity<String> deleteExpense(@PathVariable Long id){
         try {
-            return new ResponseEntity<Boolean>(expenseService.deleteExpense(id),HttpStatus.OK);
+            if(expenseService.deleteExpense(id)){
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Intern error");
+            }
+            return new ResponseEntity<String>("Delete expense successfull",HttpStatus.OK);
         } catch (ExpenseException exception){
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE,exception.getLocalizedMessage(),exception);
-
         }
     }
 }

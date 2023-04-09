@@ -2,6 +2,7 @@ package com.mattydev.bankmanagement.bankmanagement.service;
 
 import com.mattydev.bankmanagement.bankmanagement.exception.ExpenseCreationException;
 import com.mattydev.bankmanagement.bankmanagement.exception.ExpenseNotFoundException;
+import com.mattydev.bankmanagement.bankmanagement.exception.ExpenseUpdateException;
 import com.mattydev.bankmanagement.bankmanagement.models.Expense;
 import com.mattydev.bankmanagement.bankmanagement.repository.ExpenseRepository;
 import com.mattydev.bankmanagement.bankmanagement.repository.UserRepository;
@@ -57,10 +58,14 @@ public class ExpenseServiceImpl implements ExpenseService {
 
     @Override
     public Expense updateExpense(Expense expense) {
-        if(expenseRepository.findById(expense.getId()).isPresent()){
-            return expenseRepository.save(expense);
+        if(expense.getType_id() != null && expense.getUser_id() != null){
+            if(expenseRepository.findById(expense.getId()).isPresent()){
+                return expenseRepository.save(expense);
+            } else {
+                throw new ExpenseNotFoundException("Expense not found with this ID : "+expense.getId());
+            }
         } else {
-            throw new ExpenseNotFoundException("Expense not found with this ID : "+expense.getId());
+            throw new ExpenseUpdateException("One field at least is not correctly filled");
         }
     }
 
