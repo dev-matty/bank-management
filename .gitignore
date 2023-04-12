@@ -3,7 +3,7 @@
 /back-end/.mvn/wrapper/maven-wrapper.jar
 /back-end/!**/src/main/**/target/
 /back-end/!**/src/test/**/target/
-
+/back-end/.mvn/
 ### STS ###
 /back-end/.apt_generated
 /back-end/.classpath
@@ -18,7 +18,7 @@
 /back-end/*.iws
 /back-end/*.iml
 /back-end/*.ipr
-
+.idea
 
 ### VS Code ###
 /front-end/.vscode/
@@ -27,3 +27,10 @@
 .gitignore
 /front-end/.mvn/
 /front-end/src/main/resources/application.properties
+
+
+## FRONT END ###
+
+/front-end/node_modules/*
+/front-end/node_modules
+/front-end/package-lock.json
