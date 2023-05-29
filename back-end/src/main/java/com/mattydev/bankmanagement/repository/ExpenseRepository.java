@@ -1,6 +1,6 @@
-package com.mattydev.bankmanagement.bankmanagement.repository;
+package com.mattydev.bankmanagement.repository;
 
-import com.mattydev.bankmanagement.bankmanagement.models.Expense;
+import com.mattydev.bankmanagement.models.Expense;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

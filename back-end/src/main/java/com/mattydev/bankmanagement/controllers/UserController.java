@@ -1,13 +1,13 @@
-package com.mattydev.bankmanagement.bankmanagement.controllers;
+package com.mattydev.bankmanagement.controllers;
 
-import com.mattydev.bankmanagement.bankmanagement.exception.ExpenseException;
-import com.mattydev.bankmanagement.bankmanagement.exception.UserException;
-import com.mattydev.bankmanagement.bankmanagement.exception.UserMailPresentException;
-import com.mattydev.bankmanagement.bankmanagement.exception.UserNotFoundException;
-import com.mattydev.bankmanagement.bankmanagement.models.Expense;
-import com.mattydev.bankmanagement.bankmanagement.models.User;
-import com.mattydev.bankmanagement.bankmanagement.service.ExpenseService;
-import com.mattydev.bankmanagement.bankmanagement.service.UserService;
+import com.mattydev.bankmanagement.exception.ExpenseException;
+import com.mattydev.bankmanagement.exception.UserException;
+import com.mattydev.bankmanagement.exception.UserMailPresentException;
+import com.mattydev.bankmanagement.exception.UserNotFoundException;
+import com.mattydev.bankmanagement.models.Expense;
+import com.mattydev.bankmanagement.models.User;
+import com.mattydev.bankmanagement.service.ExpenseService;
+import com.mattydev.bankmanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;

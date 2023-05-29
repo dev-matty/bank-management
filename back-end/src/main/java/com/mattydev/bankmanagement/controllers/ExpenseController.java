@@ -1,8 +1,8 @@
-package com.mattydev.bankmanagement.bankmanagement.controllers;
+package com.mattydev.bankmanagement.controllers;
 
-import com.mattydev.bankmanagement.bankmanagement.exception.ExpenseException;
-import com.mattydev.bankmanagement.bankmanagement.models.Expense;
-import com.mattydev.bankmanagement.bankmanagement.service.ExpenseService;
+import com.mattydev.bankmanagement.exception.ExpenseException;
+import com.mattydev.bankmanagement.models.Expense;
+import com.mattydev.bankmanagement.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

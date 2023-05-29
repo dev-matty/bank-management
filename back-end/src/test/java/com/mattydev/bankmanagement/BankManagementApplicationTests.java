@@ -1,4 +1,4 @@
-package com.mattydev.bankmanagement.bankmanagement;
+package com.mattydev.bankmanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

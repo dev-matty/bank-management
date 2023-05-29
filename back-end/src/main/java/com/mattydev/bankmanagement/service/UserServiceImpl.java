@@ -1,9 +1,9 @@
-package com.mattydev.bankmanagement.bankmanagement.service;
+package com.mattydev.bankmanagement.service;
 
-import com.mattydev.bankmanagement.bankmanagement.exception.UserMailPresentException;
-import com.mattydev.bankmanagement.bankmanagement.exception.UserNotFoundException;
-import com.mattydev.bankmanagement.bankmanagement.models.User;
-import com.mattydev.bankmanagement.bankmanagement.repository.UserRepository;
+import com.mattydev.bankmanagement.exception.UserMailPresentException;
+import com.mattydev.bankmanagement.exception.UserNotFoundException;
+import com.mattydev.bankmanagement.models.User;
+import com.mattydev.bankmanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

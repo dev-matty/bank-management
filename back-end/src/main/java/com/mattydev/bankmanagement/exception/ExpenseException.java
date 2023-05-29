@@ -1,4 +1,4 @@
-package com.mattydev.bankmanagement.bankmanagement.exception;
+package com.mattydev.bankmanagement.exception;
 
 /**
  * @author matty - 08/04/2023

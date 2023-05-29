@@ -1,6 +1,6 @@
-package com.mattydev.bankmanagement.bankmanagement.controllers;
+package com.mattydev.bankmanagement.controllers;
 
-import com.mattydev.bankmanagement.bankmanagement.models.User;
+import com.mattydev.bankmanagement.models.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

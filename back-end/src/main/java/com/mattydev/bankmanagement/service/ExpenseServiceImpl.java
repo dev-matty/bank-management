@@ -1,11 +1,11 @@
-package com.mattydev.bankmanagement.bankmanagement.service;
+package com.mattydev.bankmanagement.service;
 
-import com.mattydev.bankmanagement.bankmanagement.exception.ExpenseCreationException;
-import com.mattydev.bankmanagement.bankmanagement.exception.ExpenseNotFoundException;
-import com.mattydev.bankmanagement.bankmanagement.exception.ExpenseUpdateException;
-import com.mattydev.bankmanagement.bankmanagement.models.Expense;
-import com.mattydev.bankmanagement.bankmanagement.repository.ExpenseRepository;
-import com.mattydev.bankmanagement.bankmanagement.repository.UserRepository;
+import com.mattydev.bankmanagement.exception.ExpenseCreationException;
+import com.mattydev.bankmanagement.exception.ExpenseNotFoundException;
+import com.mattydev.bankmanagement.exception.ExpenseUpdateException;
+import com.mattydev.bankmanagement.models.Expense;
+import com.mattydev.bankmanagement.repository.ExpenseRepository;
+import com.mattydev.bankmanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

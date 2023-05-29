@@ -1,4 +1,4 @@
-package com.mattydev.bankmanagement.bankmanagement;
+package com.mattydev.bankmanagement;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

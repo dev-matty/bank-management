@@ -1,6 +1,6 @@
-package com.mattydev.bankmanagement.bankmanagement.service;
+package com.mattydev.bankmanagement.service;
 
-import com.mattydev.bankmanagement.bankmanagement.models.Expense;
+import com.mattydev.bankmanagement.models.Expense;
 
 import java.time.LocalDate;
 import java.util.List;

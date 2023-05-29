@@ -1,4 +1,4 @@
-package com.mattydev.bankmanagement.bankmanagement.models;
+package com.mattydev.bankmanagement.models;
 
 import jakarta.persistence.*;
 

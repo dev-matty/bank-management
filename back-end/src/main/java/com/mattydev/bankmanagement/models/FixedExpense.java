@@ -1,4 +1,4 @@
-package com.mattydev.bankmanagement.bankmanagement.models;
+package com.mattydev.bankmanagement.models;
 
 /**
  * @author matty - 25/03/2023
