@@ -9,7 +9,6 @@ import com.mattydev.bankmanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -43,7 +42,7 @@ public class ExpenseServiceImpl implements ExpenseService {
 
     @Override
     public Expense createExpense(Expense expense) {
-        if(expense.getType_id() != null && expense.getAmount().compareTo(BigDecimal.ZERO) > 0
+        if(expense.getType_id() != null && expense.hasAmountMoreThanZero()
                 && expense.getDate() != null &&  userRepository.findById(expense.getUser_id()).isPresent()){
             return expenseRepository.save(expense);
         } else {

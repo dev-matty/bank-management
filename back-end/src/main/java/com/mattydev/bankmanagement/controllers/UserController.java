@@ -24,7 +24,7 @@ import java.util.Optional;
  * @project bank-management
  */
 @RestController
-@RequestMapping("/api/v1/user")
+@RequestMapping("/bank/v1/user")
 public class UserController {
 
     private UserService userService;

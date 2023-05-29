@@ -76,4 +76,8 @@ public class Expense {
     public void setType_id(Long type_id) {
         this.type_id = type_id;
     }
+
+    public boolean hasAmountMoreThanZero() {
+        return getAmount().compareTo(BigDecimal.ZERO) > 0;
+    }
 }

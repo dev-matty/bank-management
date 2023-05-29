@@ -14,7 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
  * @project bank-management
  */
 @RestController
-@RequestMapping("/api/v1/expense")
+@RequestMapping("/bank/v1/expense")
 public class ExpenseController {
     private ExpenseService expenseService;
 
